@@ -55,15 +55,18 @@ df <- mutate(df, date = dmy(date))
 ggplot(df, aes(x = date, y = count, group = mask, color = mask)) +
       geom_line() +
       theme(axis.text.x = element_text(angle = 90)) +
-      scale_x_date(date_breaks = "1 day")
+      scale_x_date(date_breaks = "1 day") +
+  labs(title = "Kansas COVID-19 7-Day Rolling Average of Daily Cases/Per 100K Population",
+       subtitle = "Mask Counties Vs. No-Mask Mandate Counties",
+       ylab = "Average of Daily Cases/Per 100K Population")
 ```
 
 
 ### Exercise 3
 
-*Add your narrative here.*
+The ralationship between the two set of values can be compared more clearly.
 
 
 ### Exercise 4
 
-*Add your narrative here.*
+The number of cases in the counties wearing musk is decreasing but always higher than population aren't wearing musk.
