@@ -44,12 +44,18 @@ df <- pivot_longer(df,
   cols = c(mask, no_mask),
   names_to = "mask",
   values_to = "count")
+
+df <- mutate(df, date = dmy(date))
 ```
 
 
 ### Exercise 2
 
 ```{r better-viz}
+ggplot(df, aes(x = date, y = count, group = mask, color = mask)) +
+      geom_line() +
+      theme(axis.text.x = element_text(angle = 90)) +
+      scale_x_date(date_breaks = "1 day")
 ```
 
 
